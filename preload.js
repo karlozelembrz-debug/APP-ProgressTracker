@@ -1,0 +1,20 @@
+const {contextBridge,ipcRenderer}=require('electron');
+contextBridge.exposeInMainWorld('ptDisk',{
+  info:()=>ipcRenderer.invoke('ptb:info'),
+  choose:()=>ipcRenderer.invoke('ptb:choose'),
+  write:(name,text)=>ipcRenderer.invoke('ptb:write',name,text),
+  list:()=>ipcRenderer.invoke('ptb:list'),
+  open:()=>ipcRenderer.invoke('ptb:open'),
+  pdf:(html,name)=>ipcRenderer.invoke('ptb:pdf',html,name),
+  dLoad:()=>ipcRenderer.sendSync('ptd:load'),
+  dSave:t=>ipcRenderer.invoke('ptd:save',t),
+  dSaveSync:t=>ipcRenderer.sendSync('ptd:saveSync',t),
+  kPut:(k,v)=>ipcRenderer.invoke('ptd:put',k,v),
+  kGet:k=>ipcRenderer.invoke('ptd:get',k),
+  kHas:k=>ipcRenderer.invoke('ptd:has',k),
+  kDel:k=>ipcRenderer.invoke('ptd:del',k),
+  kKeys:()=>ipcRenderer.invoke('ptd:keys'),
+  dInfo:()=>ipcRenderer.invoke('ptd:info'),
+  dOpen:()=>ipcRenderer.invoke('ptd:open'),
+  dChoose:()=>ipcRenderer.invoke('ptd:choose')
+});

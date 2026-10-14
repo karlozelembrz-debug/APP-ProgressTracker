@@ -8,6 +8,8 @@ Treba samo Node.js (https://nodejs.org, LTS).
 4. Instalacijska datoteka: `npm run dist:win` (Windows → dist/*.exe), `npm run dist:mac` (macOS → .dmg) ili `npm run dist:linux` (→ .AppImage). Svaki se gradi na svom sustavu.
 Bez instaliranja alata: gurni mapu na GitHub → Actions → "Build" → Run workflow; preuzmi gotove instalere kao artifacts.
 
+**Podaci na disku:** desktop aplikacija sprema podatke kao datoteke u mapu `Dokumenti\ProgressTracker-podaci` (mapu možeš promijeniti u Postavke → Podaci). Ograničenje je samo slobodan prostor na disku. Podaci koje je prethodna verzija držala u pregledniku sami se sele u tu mapu pri prvom pokretanju.
+
 **Podaci:** aplikacija ima vlastitu pohranu, pa podaci iz preglednika NE prelaze sami. U staroj verziji: „Sigurnosna kopija" → u novoj: „Učitaj kopiju".
 
 ## B) PWA (instalacija iz preglednika)
